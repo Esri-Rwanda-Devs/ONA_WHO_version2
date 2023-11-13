@@ -20,8 +20,8 @@ const fetchDataFromAPI = async () => {
     );
     const { data } = response;
     console.log({ data });
-    if (data.features) {
-      const query = data.features.slice(0, 5).map((item) => ({
+    if (data.data.features) {
+      const query = data.data.features.map((item) => ({
         stationid: item.properties.stationId,
         stationname: item.properties.stationName,
         date: item.properties.date,
@@ -30,15 +30,9 @@ const fetchDataFromAPI = async () => {
         longitude: item.geometry.coordinates[1],
       }));
 
-      console.log({ query });
-
-      console.log(query.length);
-
-      query.forEach(async (element, index) => {
-        console.log(`inserting ${index + 1} of ${query.length}`);
-        await Monitorings.create(element);
-      });
-      // const insert = await Monitorings.bulkCreate(query);
+      console.log("inserting data....");
+      const insert = await Monitorings.bulkCreate(query);
+      console.log("inserted " + insert.length + "objects");
     }
   } catch (error) {
     console.log("Error fetching data from API:", error.message);
