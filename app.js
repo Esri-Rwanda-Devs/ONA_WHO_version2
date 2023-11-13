@@ -7,6 +7,7 @@ const axios = require("axios");
 
 const fetchDataFromAPI = async () => {
   try {
+    console.log("Getting data");
     const response = await axios.get(
       "http://197.243.94.20/api/v1/stations/find?startDate=2023-09-18T14:01:18.066Z&endDate=2023-11-07T14:01:18.066Z",
       {
@@ -16,7 +17,7 @@ const fetchDataFromAPI = async () => {
         },
       }
     );
-    const data = await response.json();
+    const { data } = response;
     console.log({ data });
   } catch (error) {
     console.log("Error fetching data from API:", error.message);
