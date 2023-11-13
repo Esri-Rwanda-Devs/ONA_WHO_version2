@@ -5,11 +5,8 @@ const sequelize = new Sequelize(
   "root", //DB_USERNAME,
   "", //DB_PASSWORD,
   {
-    host: process.env.DB_HOST,
-    dialect: "mysql",
-    dialectOptions: {
-      timezone: "+02:00",
-    },
+    host: "localhost", //host
+    dialect: "mysql", //'mysql', 'mariadb', 'postgres', 'mssql', 'sqlite', 'snowflake', 'db2' or 'ibmi'
   }
 );
 
@@ -29,3 +26,9 @@ db.sequelize = sequelize;
 
 //models
 db.monitoring = require("./monitoring")(sequelize, DataTypes);
+
+db.sequelize.sync({ force: false }).then(() => {
+  console.log("DB re-sync done!");
+});
+
+module.exports = db;

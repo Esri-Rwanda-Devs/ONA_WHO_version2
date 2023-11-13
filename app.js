@@ -1,13 +1,14 @@
 require("dotenv").config();
-// const db = pgp(
+
 //   "postgres://postgres:Postgres.2023!!@localhost:5432/meteomonitoring"
-// );
 
 const axios = require("axios");
+const db = require("./models");
+const Monitorings = db.monitoring;
 
 const fetchDataFromAPI = async () => {
+  console.log("getting data...");
   try {
-    console.log("Getting data");
     const response = await axios.get(
       "http://197.243.94.20/api/v1/stations/find?startDate=2023-09-18T14:01:18.066Z&endDate=2023-11-07T14:01:18.066Z",
       {
@@ -19,6 +20,26 @@ const fetchDataFromAPI = async () => {
     );
     const { data } = response;
     console.log({ data });
+    if (data.features) {
+      const query = data.features.slice(0, 5).map((item) => ({
+        stationid: item.properties.stationId,
+        stationname: item.properties.stationName,
+        date: item.properties.date,
+        rain: item.properties.rain,
+        latitude: item.geometry.coordinates[0],
+        longitude: item.geometry.coordinates[1],
+      }));
+
+      console.log({ query });
+
+      console.log(query.length);
+
+      query.forEach(async (element, index) => {
+        console.log(`inserting ${index + 1} of ${query.length}`);
+        await Monitorings.create(element);
+      });
+      // const insert = await Monitorings.bulkCreate(query);
+    }
   } catch (error) {
     console.log("Error fetching data from API:", error.message);
   }
