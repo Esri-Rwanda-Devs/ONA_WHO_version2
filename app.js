@@ -26,13 +26,8 @@ const fetchDataFromAPI = async () => {
         stationname: item.properties.stationName,
         date: item.properties.date,
         rain: item.properties.rain,
-        shape: {
-          type: "Point",
-          coordinates: [
-            item.geometry.coordinates[1],
-            item.geometry.coordinates[0],
-          ], // [longitude, latitude]
-        },
+        latitude: item.geometry.coordinates[0],
+        longitude: item.geometry.coordinates[1],
       }));
 
       console.log("inserting data....");
