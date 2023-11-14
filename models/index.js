@@ -27,7 +27,7 @@ db.sequelize = sequelize;
 //models
 db.monitoring = require("./monitoring")(sequelize, DataTypes);
 
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
   console.log("DB re-sync done!");
 });
 
