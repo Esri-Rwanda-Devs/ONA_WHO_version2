@@ -7,12 +7,12 @@
     "pg-promise": "^11.5.4",
     "sequelize": "^6.35.0"
   },
-  "name": "meteo_api",
+  "name": "ONA_WHO",
   "description": "",
   "version": "1.0.0",
   "main": "app.js",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.2"
   },
   "scripts": {
     "start": "nodemon app.js",
