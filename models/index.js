@@ -7,7 +7,7 @@ const sequelize = new Sequelize(
   {
     host: "esrirw.rw", //host
     dialect: "postgres", //'mysql', 'mariadb', 'postgres', 'mssql', 'sqlite', 'snowflake', 'db2' or 'ibmi'
-  }
+}
 );
 
 sequelize
@@ -25,10 +25,16 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //models
-db.monitoring = require("./kinshasa")(sequelize, DataTypes);
+db.Uganda_reg = require("./uganda_reg")(sequelize, DataTypes);
+db.Uganda_update= require("./uganda_update")(sequelize, DataTypes);
+db.Uganda_eSRUV= require("./uganda_eSRUV")(sequelize, DataTypes);
+// db.kinshasa= require("./kinshasa")(sequelize, DataTypes);
+
+
 
 db.sequelize.sync({ force: false }).then(() => {
   console.log("DB re-sync done!");
 });
+
 
 module.exports = db;
