@@ -1,19 +1,11 @@
-const { Sequelize } = require("../app");
+const { Sequelize } = require("../../app");
 
 module.exports = (sequelize, DataTypes) => {
-  const kinshasa = sequelize.define("kinshasa_data", {
+  const Gabon = sequelize.define("gabon_evaluation", {
     objectid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
-    },
-    ist: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    nom: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
     tags: {
       type: DataTypes.STRING,
@@ -23,19 +15,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     today: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     notes: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    prenom: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -51,27 +35,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    district: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    nom_Zone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     deviceid: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    district: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    province: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    username: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -83,19 +59,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    privilege: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     starttime: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    telephone: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    designation: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -115,11 +79,31 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    heure_Rapport: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     submitted_by: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     date_modified: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    date_monitored: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    monitored_Level: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    name_Supervisor: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    nom_Responsable: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -139,8 +123,32 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    media_all_received: {
+    local_Equipe: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    media_all_rec: {
       type: DataTypes.BOOLEAN,
+      allowNull: true,
+    },
+    waste_Disposal: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    ref_PCI_Qualifie: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    materiel_Gestion_Dechets: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    stockage_intermediaire: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    gestion_Dechets: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
     latitude: {
@@ -153,5 +161,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  return kinshasa;
+  return Gabon;
 };

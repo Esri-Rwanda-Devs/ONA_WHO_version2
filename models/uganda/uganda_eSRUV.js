@@ -1,8 +1,7 @@
-const { Sequelize } = require("../app");
+const { Sequelize } = require("../../app");
 
 module.exports = (sequelize, DataTypes) => {
   const uganda_eSRUV = sequelize.define("uganda_esruv", {
-    
     objectid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -28,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    today:{
+    today: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -36,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _edited:{
+    _edited: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -352,7 +351,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    number_unreported_afp_cases_in_the_physiotherapy_unit:{
+    number_unreported_afp_cases_in_the_physiotherapy_unit: {
       type: DataTypes.STRING,
       allowNull: true,
     },

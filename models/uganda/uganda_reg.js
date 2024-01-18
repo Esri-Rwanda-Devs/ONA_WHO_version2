@@ -1,11 +1,15 @@
-const { Sequelize } = require("../app");
+const { Sequelize } = require("../../app");
 
 module.exports = (sequelize, DataTypes) => {
-  const kinshasa = sequelize.define("gabon_gabon", {
+  const uganda_reg = sequelize.define("uganda_reg", {
     objectid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
+    },
+    ist: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     tags: {
       type: DataTypes.STRING,
@@ -15,7 +19,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    region: {
+    color: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    label: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    today: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -23,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    country: {
+    states: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -39,27 +51,35 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    district: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    nom_zone: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    deviceid: {
+    comments: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     duration: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     xform_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    countries: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    districts: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    new_check: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    ownership: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -67,11 +87,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    today: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    code_equipe: {
+    states_calc: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -87,11 +103,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    color_filter: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     formhub: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    rapport_h: {
+    marker_color: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -99,11 +119,31 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    gps_beginning: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    marker_symbol: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     date_modified: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    date_monitored: {
+    countries_calc: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    districts_calc: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    priority_level: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    facility_status: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -115,24 +155,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-
-    designation: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    attachments: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    media_count: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    total_media: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
     xform_id_string: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    vaccination_site: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -142,6 +169,30 @@ module.exports = (sequelize, DataTypes) => {
     },
     media_all_received: {
       type: DataTypes.BOOLEAN,
+      allowNull: true,
+    },
+    priority_level_calc: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    facility_status_calc: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    recognized_focal_site: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    name_of_facility_visited: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    type_of_facility_visited: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    type_of_facility_visited_calc: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
     latitude: {
@@ -154,5 +205,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  return kinshasa;
+  return uganda_reg;
 };

@@ -1,4 +1,4 @@
-const { Sequelize } = require("../app");
+const { Sequelize } = require("../../app");
 
 module.exports = (sequelize, DataTypes) => {
   const uganda_update = sequelize.define("uganda_update", {
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     uuid: {
       type: DataTypes.STRING,
       allowNull: true,
-    }, 
+    },
     // color: {
     //   type: DataTypes.STRING,
     //   allowNull: true,
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     // states: {
     //   type: DataTypes.STRING,
     //   allowNull: true,
-    // },    
+    // },
     edited: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
@@ -58,11 +58,11 @@ module.exports = (sequelize, DataTypes) => {
     comments: {
       type: DataTypes.STRING,
       allowNull: true,
-     },
-     deviceid: {
+    },
+    deviceid: {
       type: DataTypes.STRING,
       allowNull: true,
-     },
+    },
     duration: {
       type: DataTypes.INTEGER,
       allowNull: true,
