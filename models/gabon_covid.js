@@ -1,19 +1,11 @@
 const { Sequelize } = require("../app");
 
 module.exports = (sequelize, DataTypes) => {
-  const kinshasa = sequelize.define("kinshasa_data", {
+  const kinshasa = sequelize.define("gabon_gabon", {
     objectid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
-    },
-    ist: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    nom: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
     tags: {
       type: DataTypes.STRING,
@@ -23,11 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    today: {
+    region: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -35,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    prenom: {
+    country: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -51,6 +39,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    district: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    nom_zone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     version: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -59,31 +55,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    district: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    province: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     duration: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     xform_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    privilege: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -91,11 +67,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    telephone: {
+    today: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    designation: {
+    code_equipe: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -115,11 +91,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    rapport_h: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     submitted_by: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     date_modified: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    date_monitored: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -129,6 +113,23 @@ module.exports = (sequelize, DataTypes) => {
     },
     submission_time: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    designation: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    attachments: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    media_count: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    total_media: {
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     xform_id_string: {
