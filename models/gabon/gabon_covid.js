@@ -1,7 +1,7 @@
 const { Sequelize } = require("../../app");
 
 module.exports = (sequelize, DataTypes) => {
-  const kinshasa = sequelize.define("gabon_gabon", {
+  const kinshasa = sequelize.define("gabon_covid", {
     objectid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
