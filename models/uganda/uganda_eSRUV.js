@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     ist: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -35,19 +39,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _edited: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    _status: {
+    edited: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _version: {
+    status: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _duration: {
+    version: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    duration: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -59,8 +63,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _xform_id: {
-      type: DataTypes.STRING,
+    xform_id: {
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     countries: {
@@ -71,14 +75,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    // new_check: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
-    // ownership: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
     starttime: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -107,16 +103,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _attachments: {
+    attachments: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _media_count: {
-      type: DataTypes.STRING,
+    media_count: {
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
-    _total_media: {
-      type: DataTypes.STRING,
+    total_media: {
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     current_temp: {
@@ -131,7 +127,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _submitted_by: {
+    submitted_by: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -155,7 +151,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _date_modified: {
+    date_modified: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -168,7 +164,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     num_fixed_plan: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     priority_level: {
@@ -195,11 +191,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _submission_time: {
+    submission_time: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _xform_id_string: {
+    xform_id_string: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -235,7 +231,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _bamboo_dataset_id: {
+    bamboo_dataset_id: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -251,7 +247,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    _media_all_received: {
+    media_all_received: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -288,7 +284,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     valid_afp_cases_found: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     temperature_monitoring: {
@@ -296,7 +292,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     fixed_session_conducted: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     log_of_calls_informants: {
@@ -347,11 +343,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    visited_community_relay_tradipract: {
+    visited_community: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    number_unreported_afp_cases_in_the_physiotherapy_unit: {
+    number_unreported: {
       type: DataTypes.STRING,
       allowNull: true,
     },

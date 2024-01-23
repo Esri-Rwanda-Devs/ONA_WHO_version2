@@ -168,6 +168,7 @@ const fetchDataFromAPI_uganda_eSRUV = async () => {
 
     const query_uganda_eSRUV = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       ist: item.ist,
       aefi: item.aefi,
       tags: item._tags.join(","),
@@ -251,9 +252,8 @@ const fetchDataFromAPI_uganda_eSRUV = async () => {
       informant_sensitization_copy: item.informant_sensitization_copy,
       list_of_community_informants: item.list_of_community_informants,
       surveillance_posters_and_scd: item.surveillance_posters_and_scd,
-      visited_community_relay_tradipract:
-        item.visited_community_relay_tradipract,
-      number_unreported_afp_cases_in_the_physiotherapy_unit:
+      visited_community: item.visited_community_relay_tradipract,
+      number_unreported:
         item.number_unreported_afp_cases_in_the_physiotherapy_unit,
       latitude: item._geolocation[0],
       longitude: item._geolocation[1],
@@ -770,7 +770,7 @@ const fetchDataFromAPI_gabon_supervision = async () => {
 // fetchDataFromAPI_gabon_evaluation();
 // fetchDataFromAPI_uganda_registration();
 // fetchDataFromAPI_uganda_update();
-// fetchDataFromAPI_uganda_eSRUV();
+fetchDataFromAPI_uganda_eSRUV();
 // fetchDataFromAPI_Kinshasa();
-getDataFromAPI_gabon_iprv();
+// getDataFromAPI_gabon_iprv();
 // fetchDataFromAPI_gabon_covid();
