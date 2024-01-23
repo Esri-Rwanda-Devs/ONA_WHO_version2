@@ -6,7 +6,8 @@
     "mysql2": "^3.6.3",
     "pg": "^8.11.3",
     "pg-promise": "^11.5.4",
-    "sequelize": "^6.35.0"
+    "sequelize": "^6.35.0",
+    "tedious": "^16.6.1"
   },
   "name": "ONA_WHO",
   "description": "",

@@ -7,6 +7,7 @@ const db = require("./models");
 const Uganda_reg = db.Uganda_reg;
 const Uganda_update = db.Uganda_update;
 const Uganda_eSRUV = db.Uganda_eSRUV;
+const gabon_iprv = db.Gabon_iprv;
 const kinshasa = db.kinshasa;
 
 const fetchDataFromAPI_uganda_registration = async () => {
@@ -174,17 +175,15 @@ const fetchDataFromAPI_uganda_eSRUV = async () => {
       sweep: item.sweep,
       today: item.today,
       notes: item._notes.join(","),
-      _edited: item._edited,
-      _status: item._status,
-      _version: item._version,
-      _duration: item._duration,
+      edited: item._edited,
+      status: item._status,
+      version: item._version,
+      duration: item._duration,
       deviceid: item.deviceid,
       rew_plan: item.rew_plan,
-      _xform_id: item._xform_id,
+      xform_id: item._xform_id,
       countries: item.countries,
       districts: item.districts,
-      new_check: item.new_check,
-      ownership: item.ownership,
       starttime: item.starttime,
       func_refrg: item.func_refrg,
       gps_ending: item.gps_ending,
@@ -192,19 +191,19 @@ const fetchDataFromAPI_uganda_eSRUV = async () => {
       designation: item.designation,
       ri_facility: item.ri_facility,
       ri_training: item.ri_training,
-      _attachments: item._attachments.join(","),
-      _media_count: item._media_count,
-      _total_media: item._total_media,
+      attachments: item._attachments.join(","),
+      media_count: item._media_count,
+      total_media: item._total_media,
       current_temp: item.current_temp,
       formhub: item["formhub/uuid"],
       iec_material: item.iec_material,
-      _submitted_by: item._submitted_by,
+      submitted_by: item._submitted_by,
       case_def_copy: item.case_def_copy,
       date_of_visit: item.date_of_visit,
       gps_beginning: item.gps_beginning,
       percent_fixed: item.percent_fixed,
       ri_tally_book: item.ri_tally_book,
-      _date_modified: item._date_modified,
+      date_modified: item._date_modified,
       functional_vdc: item.functional_vdc,
       monchart_image: item.monchart_image,
       num_fixed_plan: item.num_fixed_plan,
@@ -214,8 +213,8 @@ const fetchDataFromAPI_uganda_eSRUV = async () => {
       meta_instanceID: item["meta/instanceID"],
       ri_registration: item.ri_registration,
       ri_session_plan: item.ri_session_plan,
-      _submission_time: item._submission_time,
-      _xform_id_string: item._xform_id_string,
+      submission_time: item._submission_time,
+      xform_id_string: item._xform_id_string,
       monitoring_chart: item.monitoring_chart,
       outreach_planned: item.outreach_planned,
       ri_training_copy: item.ri_training_copy,
@@ -224,11 +223,11 @@ const fetchDataFromAPI_uganda_eSRUV = async () => {
       focal_point_table: item.focal_point_table,
       joint_supervision: item.joint_supervision,
       sessionplan_image: item.sessionplan_image,
-      _bamboo_dataset_id: item._bamboo_dataset_id,
+      bamboo_dataset_id: item._bamboo_dataset_id,
       physiotherapy_unit: item.physiotherapy_unit,
       proper_compartment: item.proper_compartment,
       supervised_by_dsno: item.supervised_by_dsno,
-      _media_all_received: item._media_all_received,
+      media_all_received: item._media_all_received,
       session_interrupted: item.session_interrupted,
       updated_investforms: item.updated_investforms,
       vaccine_ledger_book: item.vaccine_ledger_book,
@@ -488,7 +487,7 @@ const getDataFromAPI_gabon_iprv = async () => {
 
   try {
     const response = await axios.get(
-      "https://api.whonghub.org/api/v1/data/99976",
+      "https://api.whonghub.org/api/v1/data/9976",
       {
         headers: {
           Authorization: "Basic d2hvYXJjZ2lzOiQkJG9ka2dpcw==",
@@ -496,10 +495,10 @@ const getDataFromAPI_gabon_iprv = async () => {
       }
     );
     const { data } = response;
-    console.log({ data });
+    // console.log({ data });
 
     const query = data.map((item) => ({
-      objectid: item._id,
+      _id: item._id,
       ist: item.ist,
       tags: item._tags.join(","),
       uuid: item._uuid,
@@ -596,7 +595,7 @@ const getDataFromAPI_gabon_iprv = async () => {
     // if (data.length > 0) {
     //   await Monitorings.delete({});
     // }
-    const insert = await Monitorings.bulkCreate(query);
+    const insert = await gabon_iprv.bulkCreate(query);
     console.log("inserted " + insert.length + "objects");
   } catch (error) {
     console.log("Error fetching data from API:", error.message);
@@ -767,11 +766,11 @@ const fetchDataFromAPI_gabon_supervision = async () => {
   }
 };
 
-fetchDataFromAPI_gabon_supervision();
-fetchDataFromAPI_gabon_evaluation();
-fetchDataFromAPI_uganda_registration();
-fetchDataFromAPI_uganda_update();
-fetchDataFromAPI_uganda_eSRUV();
-fetchDataFromAPI_Kinshasa();
+// fetchDataFromAPI_gabon_supervision();
+// fetchDataFromAPI_gabon_evaluation();
+// fetchDataFromAPI_uganda_registration();
+// fetchDataFromAPI_uganda_update();
+// fetchDataFromAPI_uganda_eSRUV();
+// fetchDataFromAPI_Kinshasa();
 getDataFromAPI_gabon_iprv();
-fetchDataFromAPI_gabon_covid();
+// fetchDataFromAPI_gabon_covid();

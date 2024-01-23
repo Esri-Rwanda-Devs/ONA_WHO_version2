@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     _edited: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     _status: {
@@ -71,14 +71,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    new_check: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    ownership: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // new_check: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
+    // ownership: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     starttime: {
       type: DataTypes.STRING,
       allowNull: true,

@@ -2,9 +2,8 @@ const { Sequelize } = require("..");
 
 module.exports = (sequelize, DataTypes) => {
   const Monitoring = sequelize.define("gabon_iprv", {
-    objectid: {
+    _id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
       allowNull: false,
     },
     ist: {
@@ -40,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     edited: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     status: {
@@ -100,7 +99,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     code_equipe: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     attachments: {
@@ -108,11 +107,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     media_count: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     total_media: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     formhub: {
@@ -128,7 +127,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     tt1_pw: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     tt2_pw: {
@@ -168,7 +167,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     tt2_cba: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     tt3_cba: {
@@ -196,7 +195,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     tt_vials: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     yf_vials: {
@@ -220,7 +219,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     opv3: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     meta_instanceID: {
@@ -236,7 +235,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     xform_id_string: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     bcg_vials: {
@@ -244,11 +243,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     ipv_vials: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     opv_vials: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     ipv1_ge1: {
@@ -336,7 +335,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     vitaminA1Year: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     Minaefi_Measles: {
@@ -376,7 +375,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     VA1YearAndAbove: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     minaefi_DPTHibHepB: {
