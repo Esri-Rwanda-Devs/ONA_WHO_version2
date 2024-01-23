@@ -4,10 +4,13 @@ require("dotenv").config();
 
 const axios = require("axios");
 const db = require("./models");
-const Uganda_reg = db.Uganda_reg;
+const uganda_reg = db.Uganda_reg;
 const Uganda_update = db.Uganda_update;
 const Uganda_eSRUV = db.Uganda_eSRUV;
+const gabon_covid = db.gabon_covid;
 const gabon_iprv = db.Gabon_iprv;
+const gabon_evaluation = db.Gabon_evaluation;
+const gabon_supervision = db.Gabon_supervision;
 const kinshasa = db.kinshasa;
 
 const fetchDataFromAPI_uganda_registration = async () => {
@@ -27,6 +30,7 @@ const fetchDataFromAPI_uganda_registration = async () => {
 
     const query_uganda_regis = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       ist: item.ist,
       name: item.name,
       tags: item._tags.join(","),
@@ -82,7 +86,7 @@ const fetchDataFromAPI_uganda_registration = async () => {
 
     console.log("inserting data....");
 
-    const newList = Uganda_reg.bulkCreate(query_uganda_regis);
+    const newList = uganda_reg.bulkCreate(query_uganda_regis);
     const insert = await newList;
     console.log("inserted " + insert.length + "objects");
   } catch (error) {
@@ -107,32 +111,33 @@ const fetchDataFromAPI_uganda_update = async () => {
 
     const query_uganda_update = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       tags: item._tags.join(","),
       uuid: item._uuid,
       today: item.today,
       notes: item._notes.join(","),
-      _edited: item._edited,
-      _status: item._status,
+      edited: item._edited,
+      status: item._status,
       endtime: item.endtime,
-      _version: item._version,
+      version: item._version,
       comments: item.comments,
       deviceid: item.deviceid,
-      _duration: item._duration,
-      _xform_id: item._xform_id,
+      duration: item._duration,
+      xform_id: item._xform_id,
       starttime: item.starttime,
-      _attachments: item._attachments.join(","),
-      _media_count: item._media_count,
-      _total_media: item._total_media,
+      attachments: item._attachments.join(","),
+      media_count: item._media_count,
+      total_media: item._total_media,
       formhub: item["formhub/uuid"],
-      _submitted_by: item._submitted_by,
-      _date_modified: item._date_modified,
+      submitted_by: item._submitted_by,
+      date_modified: item._date_modified,
       meta_instanceID: item["meta/instanceID"],
-      _submission_time: item._submission_time,
-      _xform_id_string: item._xform_id_string,
+      submission_time: item._submission_time,
+      xform_id_string: item._xform_id_string,
       gps_beginning_up: item.gps_beginning_up,
       bamboo_dataset_id: item._bamboo_dataset_id,
       facility_status_up: item.facility_status_up,
-      _media_all_received: item._media_all_received,
+      media_all_received: item._media_all_received,
       list_location: item["list_location/states_filter"],
       name_of_facility_visited_up: item.name_of_facility_visited_up,
       type_of_facility_visited_up: item.type_of_facility_visited_up,
@@ -141,9 +146,7 @@ const fetchDataFromAPI_uganda_update = async () => {
     }));
 
     console.log("inserting data....");
-    // if (data.length > 0) {
-    //   await uganda.delete({});
-    // }
+
     const newList = Uganda_update.bulkCreate(query_uganda_update);
     const insert = await newList;
     console.log("inserted " + insert.length + "objects");
@@ -285,6 +288,7 @@ const fetchDataFromAPI_Kinshasa = async () => {
 
     const query_kinshasa = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       ist: item.ist,
       nom: item.nom,
       tags: item._tags.join(","),
@@ -350,8 +354,9 @@ const fetchDataFromAPI_gabon_covid = async () => {
     const { data } = response;
     // console.log({ data });
 
-    const query_kinshasa = data.map((item) => ({
+    const query_gabon_covid = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       tags: item._tags.join(","),
       uuid: item._uuid,
       region: item.Region,
@@ -474,7 +479,7 @@ const fetchDataFromAPI_gabon_covid = async () => {
 
     console.log("inserting data....");
 
-    const newList = kinshasa.bulkCreate(query_kinshasa);
+    const newList = gabon_covid.bulkCreate(query_gabon_covid);
     const insert = await newList;
     console.log("inserted " + insert.length + "objects");
   } catch (error) {
@@ -498,7 +503,8 @@ const getDataFromAPI_gabon_iprv = async () => {
     // console.log({ data });
 
     const query = data.map((item) => ({
-      _id: item._id,
+      objectid: item._id,
+      id: item._id,
       ist: item.ist,
       tags: item._tags.join(","),
       uuid: item._uuid,
@@ -616,8 +622,9 @@ const fetchDataFromAPI_gabon_evaluation = async () => {
     );
     const { data } = response;
 
-    const query_gabon_03 = data.map((item) => ({
+    const query_gabon_evaluation = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       tags: item._tags.join(","),
       uuid: item._uuid,
       today: item.today,
@@ -660,11 +667,11 @@ const fetchDataFromAPI_gabon_evaluation = async () => {
     }));
 
     console.log("inserting data....");
-    const newList = Gabon.bulkCreate(query_gabon_03);
+    const newList = gabon_evaluation.bulkCreate(query_gabon_evaluation);
     const insert = await newList;
     console.log("inserted " + insert.length + "objects");
   } catch (error) {
-    console.log("Error fetching data from API:", error);
+    console.log("Error fetching data from API:", error.message);
   }
 };
 
@@ -683,8 +690,9 @@ const fetchDataFromAPI_gabon_supervision = async () => {
     const { data } = response;
     // console.log({ data });
 
-    const query_uganda_regis = data.map((item) => ({
+    const query_gabon_supervision = data.map((item) => ({
       objectid: item._id,
+      id: item._id,
       tags: item._tags.join(","),
       uuid: item._uuid,
       today: item.today,
@@ -758,7 +766,7 @@ const fetchDataFromAPI_gabon_supervision = async () => {
 
     console.log("inserting data....");
 
-    const newList = Uganda_reg.bulkCreate(query_uganda_regis);
+    const newList = gabon_supervision.bulkCreate(query_gabon_supervision);
     const insert = await newList;
     console.log("inserted " + insert.length + "objects");
   } catch (error) {
@@ -770,7 +778,7 @@ const fetchDataFromAPI_gabon_supervision = async () => {
 // fetchDataFromAPI_gabon_evaluation();
 // fetchDataFromAPI_uganda_registration();
 // fetchDataFromAPI_uganda_update();
-fetchDataFromAPI_uganda_eSRUV();
+// fetchDataFromAPI_uganda_eSRUV();
 // fetchDataFromAPI_Kinshasa();
 // getDataFromAPI_gabon_iprv();
 // fetchDataFromAPI_gabon_covid();

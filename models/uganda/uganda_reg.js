@@ -1,11 +1,15 @@
 const { Sequelize } = require("../../app");
 
 module.exports = (sequelize, DataTypes) => {
-  const uganda_reg = sequelize.define("uganda_reg", {
+  const uganda_reg = sequelize.define("uganda_registration", {
     objectid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
+    },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     ist: {
       type: DataTypes.STRING,

@@ -2,7 +2,12 @@ const { Sequelize } = require("..");
 
 module.exports = (sequelize, DataTypes) => {
   const Monitoring = sequelize.define("gabon_iprv", {
-    _id: {
+    objectid: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+    },
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -39,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     edited: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     status: {
@@ -235,7 +240,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     xform_id_string: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     bcg_vials: {

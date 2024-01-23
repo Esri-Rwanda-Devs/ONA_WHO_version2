@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     tags: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -32,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     edited: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     status: {
