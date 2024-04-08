@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    id: {
+    _id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -15,11 +15,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    tags: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    uuid: {
+    _tags: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    _uuid: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -35,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    notes: {
+    _notes: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -43,11 +47,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    edited: {
+    _edited: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
     },
-    status: {
+    _status: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -55,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    version: {
+    _version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -63,11 +67,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    duration: {
+    _duration: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    xform_id: {
+    _xform_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -95,15 +99,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    attachments: {
+    _attachments: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    media_count: {
+    _media_count: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    total_media: {
+    _total_media: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -119,7 +123,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    submitted_by: {
+    _submitted_by: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -155,11 +159,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    submission_time: {
+    _submission_time: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    xform_id_string: {
+    _xform_id_string: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -205,6 +209,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     longitude: {
       type: DataTypes.DECIMAL(38, 8),
+      allowNull: true,
+    },
+    shape: {
+      type: DataTypes.DECIMAL(100, 100),
       allowNull: true,
     },
   });
