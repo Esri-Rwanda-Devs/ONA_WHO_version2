@@ -7,15 +7,15 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    id: {
+    _id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    tags: {
+    _tags: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    uuid: {
+    _uuid: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -27,11 +27,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    edited: {
+    region: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    status: {
+    update: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    _edited: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    _status: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -39,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    version: {
+    _version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -51,27 +59,39 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    duration: {
+    _duration: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    xform_id: {
+    _xform_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    countries: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    districts: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
     starttime: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    attachments: {
+    states_calc: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    media_count: {
+   _attachments: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    _media_count: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    total_media: {
+    _total_media: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -79,11 +99,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    submitted_by: {
+    _submitted_by: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    date_modified: {
+    _date_modified: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    districts_calc: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    priority_level: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    facility_status: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -91,11 +123,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    submission_time: {
+    _submission_time: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    xform_id_string: {
+    _xform_id_string: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -103,11 +135,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    bamboo_dataset_id: {
+    _bamboo_dataset_id: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    media_all_received: {
+    _media_all_received: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    facility_status_calc: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -123,12 +159,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    type_of_facility_visited_calc:{
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     latitude: {
       type: DataTypes.DECIMAL(38, 8),
       allowNull: true,
     },
     longitude: {
       type: DataTypes.DECIMAL(38, 8),
+      allowNull: true,
+    },
+    shape: {
+      type: DataTypes.DECIMAL(100, 100),
       allowNull: true,
     },
   });
